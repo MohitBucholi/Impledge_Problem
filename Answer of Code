@@ -1,3 +1,5 @@
+# plz assign the path of file in 'path' variable in line 27
+
 def fun1(indx):
     global ans
     global i
