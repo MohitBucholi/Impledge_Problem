@@ -1,0 +1,41 @@
+def fun1(indx):
+    global ans
+    global i
+    y = i
+    last_indx = 0
+    for j in range(indx +1,l):
+        if x[j] in y:
+            y=y.replace(x[j],"")
+            if y == "":
+                if ans==0:
+                    print("1. Longest Compound Word: ",end="" )
+                else:
+                    print("2. Second Longest Compound Word: ",end="")
+                print(i)
+                ans = ans+1
+                break
+            elif last_indx <= 0:
+                last_indx = j
+                
+    else:
+        if last_indx >0:
+            fun1(last_indx)
+
+import time
+start_time =  time.time()
+f =open("D:\HP\downloads\Input_02.txt",'r')
+x = list(f.read().split())
+f.close()
+
+x.sort(key=len,reverse= True)
+l = len(x)
+ans = 0
+y =" "
+
+for i in x:
+    indx = x.index(i)
+    y = i
+    fun1(indx)
+    if ans == 2:
+        break
+print("--- %s seconds ---" % (time.time() - start_time))
