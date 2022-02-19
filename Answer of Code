@@ -23,7 +23,8 @@ def fun1(indx):
 
 import time
 start_time =  time.time()
-f =open("D:\HP\downloads\Input_02.txt",'r')
+path = "D:\HP\downloads\Input_02.txt"                    ## plze give the path of file here
+f =open(path,'r')
 x = list(f.read().split())
 f.close()
 
